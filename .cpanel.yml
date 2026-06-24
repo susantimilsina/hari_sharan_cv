@@ -2,6 +2,7 @@
 deployment:
   tasks:
     - export NODE_ENV=production
-    - /usr/local/bin/npm install
-    - /usr/local/bin/npm run build
+    - export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+    - npm install
+    - npm run build
     - mkdir -p tmp && touch tmp/restart.txt
