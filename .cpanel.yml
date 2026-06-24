@@ -1,8 +1,5 @@
 ---
 deployment:
   tasks:
-    - export NODE_ENV=production
-    - export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-    - npm install
-    - npm run build
-    - mkdir -p tmp && touch tmp/restart.txt
+    - export DEPLOYPATH=/home/hsprajapaticom/public_html/
+    - /bin/cp -R out/. $DEPLOYPATH
