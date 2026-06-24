@@ -1,11 +1,10 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/hsprajapaticom/public_html/
-    - /bin/cp -R out/_next $DEPLOYPATH
-    - /bin/cp -R out/_not-found $DEPLOYPATH
-    - /bin/cp -R out/img $DEPLOYPATH
-    - /bin/cp out/index.html $DEPLOYPATH
-    - /bin/cp out/404.html $DEPLOYPATH
-    - /bin/cp out/favicon.ico $DEPLOYPATH
-    - /bin/cp out/.htaccess $DEPLOYPATH
+    - /bin/cp -R out/_next /home/hsprajapaticom/public_html/
+    - /bin/cp -R out/_not-found /home/hsprajapaticom/public_html/
+    - /bin/cp -R out/img /home/hsprajapaticom/public_html/
+    - /bin/cp out/index.html /home/hsprajapaticom/public_html/index.html
+    - /bin/cp out/404.html /home/hsprajapaticom/public_html/404.html
+    - /bin/cp out/favicon.ico /home/hsprajapaticom/public_html/favicon.ico
+    - /bin/cp out/.htaccess /home/hsprajapaticom/public_html/.htaccess
