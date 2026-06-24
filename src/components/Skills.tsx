@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { FaPlay } from "react-icons/fa";
 
 const skills = [
   { label: "Adobe Illustrator", pct: 95 },
@@ -34,13 +33,13 @@ export default function Skills() {
       style={{ background: "#ffffff" }}
     >
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Col 1 — 4/12 */}
-          <div className="lg:col-span-4">
-            <span className="sub-label" style={{ color: "#0d1094" }}>My Skills</span>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left — label + description */}
+          <div>
+            <span className="sub-label" style={{ color: "#2396fc" }}>My Skills</span>
             <h4
               style={{
-                fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+                fontFamily: "var(--font-poppins, Poppins, sans-serif)",
                 color: "#111135",
                 fontSize: "26px",
                 fontWeight: 700,
@@ -63,59 +62,8 @@ export default function Skills() {
             </p>
           </div>
 
-          {/* Col 2 — 2/12: Play button */}
-          <div
-            className="lg:col-span-2"
-            style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-          >
-            <div style={{ position: "relative", display: "inline-flex" }}>
-              <div
-                className="pulse-ring"
-                style={{
-                  position: "absolute",
-                  inset: "-8px",
-                  borderRadius: "50%",
-                  border: "2px solid rgba(255,80,142,0.4)",
-                  pointerEvents: "none",
-                }}
-              />
-              <a
-                href="https://www.youtube.com"
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  width: "64px",
-                  height: "64px",
-                  borderRadius: "50%",
-                  border: "2px solid rgba(0,0,0,0.15)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "#0d1094",
-                  textDecoration: "none",
-                  transition: "all 0.3s",
-                  background: "transparent",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.background =
-                    "linear-gradient(135deg,#73f7ea,#0d1094)";
-                  (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "transparent";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
-                  (e.currentTarget as HTMLAnchorElement).style.color = "#0d1094";
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor =
-                    "rgba(0,0,0,0.15)";
-                }}
-              >
-                <FaPlay size={18} style={{ marginLeft: "4px" }} />
-              </a>
-            </div>
-          </div>
-
-          {/* Col 3 — 6/12: Skill bars */}
-          <div className="lg:col-span-6" ref={ref}>
+          {/* Right — skill bars */}
+          <div ref={ref}>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               {skills.map((skill) => (
                 <div key={skill.label}>
@@ -138,7 +86,7 @@ export default function Skills() {
                     </span>
                     <span
                       style={{
-                        color: "#0d1094",
+                        color: "#000000",
                         fontSize: "13px",
                         fontWeight: 700,
                       }}

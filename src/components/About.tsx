@@ -8,12 +8,41 @@ export default function About() {
       style={{ background: "#ffffff" }}
     >
       <div className="container-custom">
-        <div className="max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Photo */}
+          <div className="flex justify-center">
+            <div
+              style={{
+                borderRadius: "16px",
+                overflow: "hidden",
+                width: "100%",
+                maxWidth: "400px",
+                height: "460px",
+                boxShadow: "0 20px 60px rgba(0,0,0,0.12)",
+              }}
+            >
+              <img
+                src="/hero-photo.png"
+                alt="Hari Sharan Prajapati"
+                style={{
+                  width: "111%",
+                  height: "111%",
+                  marginLeft: "-5.5%",
+                  marginTop: "-5.5%",
+                  objectFit: "cover",
+                  objectPosition: "top center",
+                  display: "block",
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Content */}
           <div>
-            <span className="sub-label" style={{ color: "#0d1094" }}>About Me</span>
+            <span className="sub-label" style={{ color: "#2396fc" }}>About Me</span>
             <h2
               style={{
-                fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+                fontFamily: "var(--font-poppins, Poppins, sans-serif)",
                 color: "#111135",
                 fontSize: "32px",
                 fontWeight: 700,
@@ -24,7 +53,7 @@ export default function About() {
             </h2>
             <h5
               style={{
-                color: "#0d1094",
+                color: "#2396fc",
                 fontSize: "16px",
                 fontWeight: 600,
                 marginBottom: "24px",
@@ -74,3 +103,4 @@ export default function About() {
     </section>
   );
 }
+

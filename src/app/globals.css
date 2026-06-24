@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --clr-def: #73f7ea;
-  --clr-def-2: #0d1094;
+  --clr-def: #2396fc;
+  --clr-def-2: #2396fc;
   --clr-heading: #ffffff;
   --clr-body: #c5c5d5;
   --clr-bg-1: #111135;
@@ -10,7 +10,7 @@
   --clr-ftr: #070E27;
   --clr-card: #1a1a3e;
   --font-1: 'Poppins', sans-serif;
-  --font-2: 'Montserrat', sans-serif;
+  --font-2: 'Poppins', sans-serif;
 }
 
 * {
@@ -19,7 +19,9 @@
   padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--font-1);
@@ -28,7 +30,12 @@ body {
   overflow-x: hidden;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-2);
   color: var(--clr-heading);
   font-weight: 700;
@@ -40,7 +47,9 @@ h1,h2,h3,h4,h5,h6 {
   padding: 0 24px;
 }
 
-.section-pad { padding: 100px 0; }
+.section-pad {
+  padding: 100px 0;
+}
 
 /* Sub-title label above h2 */
 .sub-label {
@@ -61,7 +70,7 @@ h1,h2,h3,h4,h5,h6 {
 /* Typed animation gradient text */
 .typed-gradient {
   display: inline-block;
-  background: linear-gradient(to right, #73f7ea, #d580ff);
+  background: linear-gradient(to right, #2396fc, #d580ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -73,7 +82,7 @@ h1,h2,h3,h4,h5,h6 {
   align-items: center;
   gap: 8px;
   padding: 13px 30px;
-  background: linear-gradient(135deg, #73f7ea, #0d1094);
+  background: #2396fc;
   color: #fff;
   border-radius: 4px;
   font-weight: 600;
@@ -83,7 +92,10 @@ h1,h2,h3,h4,h5,h6 {
   border: none;
   cursor: pointer;
 }
-.btn-primary-custom:hover { opacity: 0.88; }
+
+.btn-primary-custom:hover {
+  opacity: 0.88;
+}
 
 /* Outline button */
 .btn-outline-custom {
@@ -91,8 +103,8 @@ h1,h2,h3,h4,h5,h6 {
   align-items: center;
   gap: 8px;
   padding: 12px 30px;
-  border: 2px solid #73f7ea;
-  color: #0d1094;
+  border: 2px solid #2396fc;
+  color: #2396fc;
   border-radius: 4px;
   font-weight: 600;
   font-size: 14px;
@@ -101,8 +113,9 @@ h1,h2,h3,h4,h5,h6 {
   background: transparent;
   cursor: pointer;
 }
+
 .btn-outline-custom:hover {
-  background: linear-gradient(135deg, #73f7ea, #0d1094);
+  background: #2396fc;
   border-color: transparent;
   color: #fff;
 }
@@ -110,35 +123,80 @@ h1,h2,h3,h4,h5,h6 {
 /* Progress bar */
 .skill-track {
   height: 5px;
-  background: rgba(255,255,255,0.1);
+  background: #e0e0ea;
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 6px;
 }
+
 .skill-fill {
   height: 100%;
-  background: linear-gradient(to right, #73f7ea, #0d1094);
+  background: linear-gradient(to right, #00f3ff, #2396fc);
   border-radius: 4px;
-  transition: width 1.4s cubic-bezier(0.4,0,0.2,1);
+  transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Typed cursor blink */
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-.typed-cursor { animation: blink 1s infinite; color: #73f7ea; }
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: 0
+  }
+}
+
+.typed-cursor {
+  animation: blink 1s infinite;
+  color: #2396fc;
+}
 
 /* Float animation for hero image */
-@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
-.float-anim { animation: float 5s ease-in-out infinite; }
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-16px)
+  }
+}
+
+.float-anim {
+  animation: float 5s ease-in-out infinite;
+}
 
 /* Pulse ring */
 @keyframes pulse-ring {
-  0% { transform: scale(1); opacity: 0.6; }
-  100% { transform: scale(1.6); opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
+
 .pulse-ring {
   animation: pulse-ring 1.8s ease-out infinite;
 }
 
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #111135; }
-::-webkit-scrollbar-thumb { background: #73f7ea; border-radius: 4px; }
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111135;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2396fc;
+  border-radius: 4px;
+}

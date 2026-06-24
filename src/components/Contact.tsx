@@ -69,10 +69,10 @@ export default function Contact() {
     <section id="contact" className="section-pad" style={{ background: "#f5f5fa" }}>
       <div className="container-custom">
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
-          <span className="sub-label" style={{ color: "#0d1094" }}>Contact</span>
+          <span className="sub-label" style={{ color: "#2396fc" }}>Contact</span>
           <h2
             style={{
-              fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+              fontFamily: "var(--font-poppins, Poppins, sans-serif)",
               color: "#111135",
               fontSize: "36px",
               fontWeight: 700,
@@ -118,7 +118,7 @@ export default function Contact() {
                     width: "50px",
                     height: "50px",
                     borderRadius: "50%",
-                    background: "linear-gradient(135deg, #73f7ea, #0d1094)",
+                    background: "linear-gradient(135deg, #2396fc, #2396fc)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -131,7 +131,7 @@ export default function Contact() {
                 <div>
                   <p
                     style={{
-                      fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+                      fontFamily: "var(--font-poppins, Poppins, sans-serif)",
                       color: "#111135",
                       fontWeight: 700,
                       fontSize: "15px",
@@ -158,7 +158,7 @@ export default function Contact() {
         >
           <h3
             style={{
-              fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+              fontFamily: "var(--font-poppins, Poppins, sans-serif)",
               color: "#111135",
               fontSize: "22px",
               fontWeight: 700,
@@ -175,7 +175,7 @@ export default function Contact() {
                   width: "60px",
                   height: "60px",
                   borderRadius: "50%",
-                  background: "linear-gradient(135deg,#73f7ea,#0d1094)",
+                  background: "linear-gradient(135deg,#2396fc,#2396fc)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -194,7 +194,7 @@ export default function Contact() {
               </div>
               <h4
                 style={{
-                  fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+                  fontFamily: "var(--font-poppins, Poppins, sans-serif)",
                   color: "#111135",
                   fontWeight: 700,
                   marginBottom: "8px",
@@ -217,7 +217,7 @@ export default function Contact() {
                   placeholder="Your Name *"
                   required
                   style={inputStyle}
-                  onFocus={(e) => (e.target.style.borderColor = "#0d1094")}
+                  onFocus={(e) => (e.target.style.borderColor = "#2396fc")}
                   onBlur={(e) => (e.target.style.borderColor = "rgba(0,0,0,0.12)")}
                 />
                 <input
@@ -228,7 +228,7 @@ export default function Contact() {
                   placeholder="Your Email *"
                   required
                   style={inputStyle}
-                  onFocus={(e) => (e.target.style.borderColor = "#0d1094")}
+                  onFocus={(e) => (e.target.style.borderColor = "#2396fc")}
                   onBlur={(e) => (e.target.style.borderColor = "rgba(0,0,0,0.12)")}
                 />
               </div>
@@ -241,7 +241,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Subject"
                   style={inputStyle}
-                  onFocus={(e) => (e.target.style.borderColor = "#0d1094")}
+                  onFocus={(e) => (e.target.style.borderColor = "#2396fc")}
                   onBlur={(e) => (e.target.style.borderColor = "rgba(0,0,0,0.12)")}
                 />
               </div>
@@ -255,7 +255,7 @@ export default function Contact() {
                   rows={5}
                   required
                   style={{ ...inputStyle, resize: "none" }}
-                  onFocus={(e) => (e.target.style.borderColor = "#0d1094")}
+                  onFocus={(e) => (e.target.style.borderColor = "#2396fc")}
                   onBlur={(e) => (e.target.style.borderColor = "rgba(0,0,0,0.12)")}
                 />
               </div>

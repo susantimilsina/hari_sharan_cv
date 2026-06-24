@@ -17,37 +17,37 @@ interface Service {
 
 const services: Service[] = [
   {
-    icon: <FaPalette size={24} />,
+    icon: <FaPalette size={22} />,
     title: "Brand Identity Design",
     desc: "Designing modern high-impact logos that reflect brand identity and business values.",
     tags: ["Logo", "Branding", "Identity"],
   },
   {
-    icon: <FaInstagram size={24} />,
+    icon: <FaInstagram size={22} />,
     title: "Social Media Design",
     desc: "Visually compelling campaigns that drive engagement and boost brand visibility.",
     tags: ["Social", "Campaign", "Digital"],
   },
   {
-    icon: <FaPrint size={24} />,
+    icon: <FaPrint size={22} />,
     title: "Print & Publication",
     desc: "High-quality ads, posters, brochures, and banners aligned with brand guidelines.",
     tags: ["Print", "InDesign", "Layout"],
   },
   {
-    icon: <FaFilm size={24} />,
+    icon: <FaFilm size={22} />,
     title: "Video & Motion",
     desc: "Engaging video content and motion graphics using Adobe Premiere and After Effects.",
     tags: ["Video", "After Effects", "Premiere"],
   },
   {
-    icon: <FaBullhorn size={24} />,
+    icon: <FaBullhorn size={22} />,
     title: "Art Direction",
     desc: "Leading creative teams to develop compelling campaigns enhancing brand visibility.",
     tags: ["Creative", "Strategy", "Direction"],
   },
   {
-    icon: <FaExternalLinkAlt size={24} />,
+    icon: <FaExternalLinkAlt size={22} />,
     title: "Freelance (Upwork)",
     desc: "113+ successfully completed projects consistently meeting client expectations.",
     tags: ["Upwork", "Top Rated+", "Remote"],
@@ -58,12 +58,26 @@ export default function Services() {
   return (
     <section id="services" className="section-pad" style={{ background: "#f5f5fa" }}>
       <div className="container-custom">
+        {/* Section header */}
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
-          <span className="sub-label" style={{ color: "#0d1094" }}>My Services</span>
+          <span
+            style={{
+              display: "inline-block",
+              color: "#2396fc",
+              fontSize: "14px",
+              fontWeight: 600,
+              letterSpacing: "1px",
+              paddingBottom: "6px",
+              borderBottom: "2px solid #2396fc",
+              marginBottom: "20px",
+            }}
+          >
+            My Services
+          </span>
           <h2
             style={{
-              fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
-              color: "#111135",
+              fontFamily: "var(--font-poppins, Poppins, sans-serif)",
+              color: "#2396fc",
               fontSize: "36px",
               fontWeight: 700,
             }}
@@ -72,109 +86,94 @@ export default function Services() {
           </h2>
         </div>
 
+        {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {services.map((s) => (
             <div
               key={s.title}
               style={{
                 background: "#ffffff",
-                border: "1px solid rgba(0,0,0,0.08)",
-                borderRadius: "8px",
-                padding: "36px 28px",
+                borderRadius: "12px",
+                padding: "40px 28px 32px",
                 textAlign: "center",
-                transition: "all 0.3s",
+                boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
+                transition: "box-shadow 0.3s, transform 0.3s",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  "rgba(255,80,142,0.35)";
                 (e.currentTarget as HTMLElement).style.boxShadow =
-                  "0 8px 40px rgba(255,80,142,0.1)";
+                  "0 8px 32px rgba(35,150,252,0.15)";
                 (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  "rgba(0,0,0,0.08)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                (e.currentTarget as HTMLElement).style.boxShadow =
+                  "0 2px 16px rgba(0,0,0,0.06)";
                 (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
               }}
             >
+              {/* Icon circle */}
               <div
                 style={{
                   width: "80px",
                   height: "80px",
                   borderRadius: "50%",
-                  background: "rgba(0,0,0,0.04)",
-                  border: "1px solid rgba(0,0,0,0.08)",
-                  margin: "0 auto 32px",
+                  background: "#ebebf0",
+                  margin: "0 auto 28px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: "#0d1094",
+                  color: "#2396fc",
                 }}
               >
                 {s.icon}
               </div>
 
+              {/* Title + gradient separator */}
               <h4
                 style={{
-                  fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+                  fontFamily: "var(--font-poppins, Poppins, sans-serif)",
                   color: "#111135",
                   fontWeight: 700,
                   fontSize: "17px",
-                  paddingBottom: "24px",
-                  marginBottom: "24px",
-                  borderBottom: "1px solid rgba(0,0,0,0.08)",
-                  position: "relative",
+                  marginBottom: "14px",
                 }}
               >
                 {s.title}
-                <span
-                  style={{
-                    position: "absolute",
-                    bottom: "-1px",
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    width: "56px",
-                    height: "2px",
-                    background: "linear-gradient(to right, #73f7ea, #0d1094)",
-                    borderRadius: "2px",
-                  }}
-                />
               </h4>
+              <div
+                style={{
+                  width: "48px",
+                  height: "3px",
+                  background: "linear-gradient(to right, #00f3ff, #2396fc)",
+                  borderRadius: "2px",
+                  margin: "0 auto 20px",
+                }}
+              />
 
+              {/* Tags */}
               <div
                 style={{
                   display: "flex",
                   flexWrap: "wrap",
-                  gap: "8px",
+                  gap: "12px",
                   justifyContent: "center",
                   marginBottom: "16px",
                 }}
               >
                 {s.tags.map((tag) => (
-                  <a
+                  <span
                     key={tag}
-                    href="#"
                     style={{
-                      color: "#0d1094",
+                      color: "#2396fc",
                       fontSize: "13px",
                       fontWeight: 500,
-                      textDecoration: "none",
                     }}
-                    onMouseEnter={(e) =>
-                      ((e.currentTarget as HTMLAnchorElement).style.textDecoration =
-                        "underline")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.currentTarget as HTMLAnchorElement).style.textDecoration =
-                        "none")
-                    }
                   >
                     {tag}
-                  </a>
+                  </span>
                 ))}
               </div>
 
+              {/* Description */}
               <p
                 style={{
                   color: "#50506a",

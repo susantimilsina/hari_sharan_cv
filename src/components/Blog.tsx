@@ -29,7 +29,7 @@ export default function Blog() {
           <span className="sub-title">Recent News</span>
           <h2
             className="text-3xl md:text-4xl font-extrabold text-[#111135]"
-            style={{ fontFamily: "var(--font-montserrat)" }}
+            style={{ fontFamily: "var(--font-poppins)" }}
           >
             Get Update From Blog
           </h2>
@@ -50,14 +50,14 @@ export default function Blog() {
                   height={280}
                   className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute bottom-3 left-3 bg-[#73f7ea] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                <span className="absolute bottom-3 left-3 bg-[#2396fc] text-white text-xs font-semibold px-3 py-1 rounded-full">
                   {p.date}
                 </span>
               </div>
               <div className="p-6">
                 <h5
-                  className="font-bold text-[#111135] mb-2 group-hover:text-[#73f7ea] transition-colors"
-                  style={{ fontFamily: "var(--font-montserrat)" }}
+                  className="font-bold text-[#111135] mb-2 group-hover:text-[#2396fc] transition-colors"
+                  style={{ fontFamily: "var(--font-poppins)" }}
                 >
                   {p.title}
                 </h5>

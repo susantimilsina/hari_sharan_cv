@@ -45,11 +45,11 @@ export default function Navbar() {
         style={
           scrolled
             ? {
-                padding: "10px 0",
-                background: "rgba(11,15,40,0.96)",
-                backdropFilter: "blur(10px)",
-                borderBottom: "1px solid rgba(255,255,255,0.06)",
-              }
+              padding: "10px 0",
+              background: "rgba(11,15,40,0.96)",
+              backdropFilter: "blur(10px)",
+              borderBottom: "1px solid rgba(255,255,255,0.06)",
+            }
             : { padding: "20px 0", background: "transparent" }
         }
       >
@@ -58,7 +58,7 @@ export default function Navbar() {
           <a
             href="#home"
             style={{
-              fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+              fontFamily: "var(--font-poppins, Poppins, sans-serif)",
               color: "#ffffff",
               fontWeight: 800,
               fontSize: scrolled ? "20px" : "24px",
@@ -83,11 +83,11 @@ export default function Navbar() {
                   transition: "color 0.2s",
                 }}
                 onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLAnchorElement).style.color = "#73f7ea")
+                  ((e.currentTarget as HTMLAnchorElement).style.color = "#2396fc")
                 }
                 onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLAnchorElement).style.color =
-                    "rgba(255,255,255,0.7)")
+                ((e.currentTarget as HTMLAnchorElement).style.color =
+                  "rgba(255,255,255,0.7)")
                 }
               >
                 {l.label}
@@ -156,7 +156,7 @@ export default function Navbar() {
               href={l.href}
               onClick={() => setMobileOpen(false)}
               style={{
-                fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+                fontFamily: "var(--font-poppins, Poppins, sans-serif)",
                 fontSize: "24px",
                 fontWeight: 700,
                 color: "rgba(255,255,255,0.85)",
@@ -164,11 +164,11 @@ export default function Navbar() {
                 transition: "color 0.2s",
               }}
               onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color = "#73f7ea")
+                ((e.currentTarget as HTMLAnchorElement).style.color = "#2396fc")
               }
               onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color =
-                  "rgba(255,255,255,0.85)")
+              ((e.currentTarget as HTMLAnchorElement).style.color =
+                "rgba(255,255,255,0.85)")
               }
             >
               {l.label}
@@ -221,7 +221,7 @@ export default function Navbar() {
             width: "100%",
             height: "180px",
             borderRadius: "8px",
-            background: "linear-gradient(135deg, #73f7ea33, #0d109433)",
+            background: "linear-gradient(135deg, #2396fc33, #2396fc33)",
             border: "1px solid rgba(255,80,142,0.25)",
             display: "flex",
             alignItems: "center",
@@ -229,8 +229,8 @@ export default function Navbar() {
             marginBottom: "24px",
             fontSize: "40px",
             fontWeight: 800,
-            color: "#73f7ea",
-            fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+            color: "#2396fc",
+            fontFamily: "var(--font-poppins, Poppins, sans-serif)",
           }}
         >
           HSP
@@ -239,7 +239,7 @@ export default function Navbar() {
         {/* About Me heading */}
         <h4
           style={{
-            fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+            fontFamily: "var(--font-poppins, Poppins, sans-serif)",
             color: "#ffffff",
             fontSize: "18px",
             fontWeight: 700,
@@ -282,7 +282,7 @@ export default function Navbar() {
               key={item.text}
               style={{ display: "flex", alignItems: "center", gap: "12px" }}
             >
-              <span style={{ color: "#73f7ea" }}>{item.icon}</span>
+              <span style={{ color: "#2396fc" }}>{item.icon}</span>
               <span style={{ color: "#c5c5d5", fontSize: "13px" }}>{item.text}</span>
             </div>
           ))}
@@ -324,7 +324,7 @@ export default function Navbar() {
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLAnchorElement).style.background =
-                  "linear-gradient(135deg,#73f7ea,#0d1094)";
+                  "linear-gradient(135deg,#2396fc,#2396fc)";
                 (e.currentTarget as HTMLAnchorElement).style.borderColor = "transparent";
                 (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
               }}

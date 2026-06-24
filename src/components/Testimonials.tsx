@@ -39,10 +39,10 @@ export default function Testimonials() {
     <section className="section-pad" style={{ background: "#f5f5fa" }}>
       <div className="container-custom">
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
-          <span className="sub-label" style={{ color: "#0d1094" }}>Clients</span>
+          <span className="sub-label" style={{ color: "#2396fc" }}>Clients</span>
           <h2
             style={{
-              fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+              fontFamily: "var(--font-poppins, Poppins, sans-serif)",
               color: "#111135",
               fontSize: "36px",
               fontWeight: 700,
@@ -65,7 +65,7 @@ export default function Testimonials() {
             <FaQuoteLeft
               size={36}
               style={{
-                color: "#0d1094",
+                color: "#2396fc",
                 marginBottom: "24px",
                 opacity: 0.8,
               }}
@@ -94,11 +94,11 @@ export default function Testimonials() {
                   width: "52px",
                   height: "52px",
                   borderRadius: "50%",
-                  background: "linear-gradient(135deg, #73f7ea, #0d1094)",
+                  background: "linear-gradient(135deg, #2396fc, #2396fc)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+                  fontFamily: "var(--font-poppins, Poppins, sans-serif)",
                   fontWeight: 700,
                   color: "#fff",
                   fontSize: "14px",
@@ -110,7 +110,7 @@ export default function Testimonials() {
               <div>
                 <p
                   style={{
-                    fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+                    fontFamily: "var(--font-poppins, Poppins, sans-serif)",
                     color: "#111135",
                     fontWeight: 700,
                     fontSize: "15px",
@@ -121,7 +121,7 @@ export default function Testimonials() {
                 </p>
                 <p
                   style={{
-                    color: "#0d1094",
+                    color: "#2396fc",
                     fontSize: "13px",
                     fontWeight: 500,
                   }}
@@ -151,7 +151,7 @@ export default function Testimonials() {
                 borderRadius: "50%",
                 border: "1px solid rgba(255,80,142,0.4)",
                 background: "transparent",
-                color: "#0d1094",
+                color: "#2396fc",
                 cursor: "pointer",
                 display: "flex",
                 alignItems: "center",
@@ -161,13 +161,13 @@ export default function Testimonials() {
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLButtonElement).style.background =
-                  "linear-gradient(135deg,#73f7ea,#0d1094)";
+                  "linear-gradient(135deg,#2396fc,#2396fc)";
                 (e.currentTarget as HTMLButtonElement).style.color = "#fff";
                 (e.currentTarget as HTMLButtonElement).style.borderColor = "transparent";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLButtonElement).style.background = "transparent";
-                (e.currentTarget as HTMLButtonElement).style.color = "#0d1094";
+                (e.currentTarget as HTMLButtonElement).style.color = "#2396fc";
                 (e.currentTarget as HTMLButtonElement).style.borderColor =
                   "rgba(255,80,142,0.4)";
               }}
@@ -186,7 +186,7 @@ export default function Testimonials() {
                   borderRadius: "5px",
                   background:
                     i === idx
-                      ? "linear-gradient(to right, #73f7ea, #0d1094)"
+                      ? "linear-gradient(to right, #2396fc, #2396fc)"
                       : "rgba(0,0,0,0.15)",
                   border: "none",
                   cursor: "pointer",
@@ -205,7 +205,7 @@ export default function Testimonials() {
                 borderRadius: "50%",
                 border: "1px solid rgba(255,80,142,0.4)",
                 background: "transparent",
-                color: "#0d1094",
+                color: "#2396fc",
                 cursor: "pointer",
                 display: "flex",
                 alignItems: "center",
@@ -215,13 +215,13 @@ export default function Testimonials() {
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLButtonElement).style.background =
-                  "linear-gradient(135deg,#73f7ea,#0d1094)";
+                  "linear-gradient(135deg,#2396fc,#2396fc)";
                 (e.currentTarget as HTMLButtonElement).style.color = "#fff";
                 (e.currentTarget as HTMLButtonElement).style.borderColor = "transparent";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLButtonElement).style.background = "transparent";
-                (e.currentTarget as HTMLButtonElement).style.color = "#0d1094";
+                (e.currentTarget as HTMLButtonElement).style.color = "#2396fc";
                 (e.currentTarget as HTMLButtonElement).style.borderColor =
                   "rgba(255,80,142,0.4)";
               }}

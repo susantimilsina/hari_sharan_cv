@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import NetworkCanvas from "./NetworkCanvas";
 
-const typedWords = ["Art Director", "Graphic Designer", "Creative Lead"];
+const typedWords = ["Art Director", "Graphic Designer", "Video Editor"];
 
 // Static particle positions to avoid hydration mismatch
 const particles = [
@@ -78,8 +78,10 @@ export default function Hero() {
       className="relative flex items-center overflow-hidden"
       style={{
         minHeight: "100vh",
-        background:
-          "linear-gradient(135deg, #0B0F28 0%, #1a1050 50%, #0B0F28 100%)",
+        backgroundImage: "url('/Background-banner.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         clipPath:
           "polygon(50% 0%, 100% 0, 100% 86%, 33% 99%, 0 88%, 0 0)",
         paddingBottom: "120px",
@@ -143,13 +145,13 @@ export default function Hero() {
             {/* Sub-label */}
             <h5
               style={{
-                color: "#73f7ea",
+                color: "#2396fc",
                 fontSize: "14px",
                 fontWeight: 600,
                 letterSpacing: "2px",
                 textTransform: "uppercase",
                 marginBottom: "16px",
-                fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+                fontFamily: "var(--font-poppins, Poppins, sans-serif)",
               }}
             >
               Hari Sharan Prajapati
@@ -158,7 +160,7 @@ export default function Hero() {
             {/* Main heading with typed text */}
             <h2
               style={{
-                fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+                fontFamily: "var(--font-poppins, Poppins, sans-serif)",
                 color: "#ffffff",
                 fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
                 fontWeight: 700,
@@ -193,71 +195,45 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Right decorative card — 4 cols */}
-          <div className="lg:col-span-4 flex justify-center">
+          {/* Right — hero photo */}
+          <div className="lg:col-span-4 flex justify-center items-end">
             <div
               className="float-anim"
               style={{
-                width: "260px",
-                height: "320px",
-                borderRadius: "20px",
-                background:
-                  "linear-gradient(135deg, rgba(255,80,142,0.2), rgba(212,80,255,0.2))",
-                border: "1px solid rgba(255,80,142,0.3)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
                 position: "relative",
-                overflow: "hidden",
+                width: "340px",
+                height: "380px",
               }}
             >
-              {/* Inner glow */}
+              {/* Circular backdrop glow */}
               <div
                 style={{
                   position: "absolute",
-                  inset: 0,
-                  background:
-                    "radial-gradient(circle at 50% 40%, rgba(255,80,142,0.15) 0%, transparent 70%)",
-                  pointerEvents: "none",
+                  top: "10%",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  width: "300px",
+                  height: "300px",
+                  borderRadius: "50%",
+                  background: "rgba(255,255,255,0.08)",
+                  border: "2px solid rgba(255,255,255,0.15)",
                 }}
               />
-              {/* Corner decorations */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "40px",
-                  height: "40px",
-                  borderTop: "3px solid #73f7ea",
-                  borderLeft: "3px solid #73f7ea",
-                  borderRadius: "20px 0 0 0",
-                }}
-              />
-              <div
+              {/* Photo */}
+              <img
+                src="/hero-hari.png"
+                alt="Hari Sharan Prajapati"
                 style={{
                   position: "absolute",
                   bottom: 0,
-                  right: 0,
-                  width: "40px",
-                  height: "40px",
-                  borderBottom: "3px solid #0d1094",
-                  borderRight: "3px solid #0d1094",
-                  borderRadius: "0 0 20px 0",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  height: "100%",
+                  objectFit: "contain",
+                  objectPosition: "bottom",
+                  filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.4))",
                 }}
               />
-              <span
-                style={{
-                  fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
-                  fontSize: "52px",
-                  fontWeight: 800,
-                  color: "#73f7ea",
-                  position: "relative",
-                  zIndex: 1,
-                }}
-              >
-                HSP
-              </span>
             </div>
           </div>
         </div>

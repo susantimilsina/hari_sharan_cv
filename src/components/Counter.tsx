@@ -18,7 +18,7 @@ const stats = [
     suffix: "+",
     label1: "Upwork",
     label2: "Projects",
-    color: "#0d1094",
+    color: "#2396fc",
   },
   {
     icon: <FaTrophy size={22} />,
@@ -84,7 +84,7 @@ function StatItem({
           width: "64px",
           height: "64px",
           borderRadius: "50%",
-          background: "linear-gradient(135deg, #73f7ea, #0d1094)",
+          background: "#2396fc",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -99,7 +99,7 @@ function StatItem({
       {/* Count */}
       <div
         style={{
-          fontFamily: "var(--font-montserrat, Montserrat, sans-serif)",
+          fontFamily: "var(--font-poppins, Poppins, sans-serif)",
           fontSize: "42px",
           fontWeight: 800,
           color: "#111135",
