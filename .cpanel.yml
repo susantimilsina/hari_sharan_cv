@@ -2,4 +2,10 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/hsprajapaticom/public_html/
-    - /bin/cp -R out/. $DEPLOYPATH
+    - /bin/cp -R out/_next $DEPLOYPATH
+    - /bin/cp -R out/_not-found $DEPLOYPATH
+    - /bin/cp -R out/img $DEPLOYPATH
+    - /bin/cp out/index.html $DEPLOYPATH
+    - /bin/cp out/404.html $DEPLOYPATH
+    - /bin/cp out/favicon.ico $DEPLOYPATH
+    - /bin/cp out/.htaccess $DEPLOYPATH
