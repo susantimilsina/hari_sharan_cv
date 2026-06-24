@@ -5,10 +5,10 @@ deployment:
     - /bin/cp -R out/_not-found /home/hsprajapaticom/public_html/
     - /bin/cp -R out/img /home/hsprajapaticom/public_html/
     - /bin/cp -R out/portfolio /home/hsprajapaticom/public_html/
+    - /bin/cp out/Background-banner.png /home/hsprajapaticom/public_html/Background-banner.png
+    - /bin/cp out/hero-hari.png /home/hsprajapaticom/public_html/hero-hari.png
+    - /bin/cp out/hero-photo.png /home/hsprajapaticom/public_html/hero-photo.png
     - /bin/cp out/index.html /home/hsprajapaticom/public_html/index.html
     - /bin/cp out/404.html /home/hsprajapaticom/public_html/404.html
     - /bin/cp out/favicon.ico /home/hsprajapaticom/public_html/favicon.ico
     - /bin/cp out/.htaccess /home/hsprajapaticom/public_html/.htaccess
-    - /bin/cp out/Background-banner.png /home/hsprajapaticom/public_html/Background-banner.png
-    - /bin/cp out/hero-hari.png /home/hsprajapaticom/public_html/hero-hari.png
-    - /bin/cp out/hero-photo.png /home/hsprajapaticom/public_html/hero-photo.png
