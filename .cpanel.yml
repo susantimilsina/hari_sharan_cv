@@ -5,7 +5,7 @@ deployment:
     - /bin/cp -R out/_not-found /home/hsprajapaticom/public_html/
     - /bin/cp -R out/img /home/hsprajapaticom/public_html/
     - /bin/cp -R out/portfolio /home/hsprajapaticom/public_html/
-    - /bin/cp out/Background-banner.png /home/hsprajapaticom/public_html/Background-banner.png
+    - /bin/cp out/Background-banner.jpg /home/hsprajapaticom/public_html/Background-banner.jpg
     - /bin/cp out/hero-hari.png /home/hsprajapaticom/public_html/hero-hari.png
     - /bin/cp out/hero-photo.png /home/hsprajapaticom/public_html/hero-photo.png
     - /bin/cp out/index.html /home/hsprajapaticom/public_html/index.html

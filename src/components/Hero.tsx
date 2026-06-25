@@ -77,14 +77,14 @@ export default function Hero() {
       id="home"
       className="relative flex items-center overflow-hidden"
       style={{
-        minHeight: "100vh",
-        backgroundImage: "url('/Background-banner.png')",
+        minHeight: "85vh",
+        backgroundImage: "url('/Background-banner.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         clipPath:
           "polygon(50% 0%, 100% 0, 100% 86%, 33% 99%, 0 88%, 0 0)",
-        paddingBottom: "120px",
+        paddingBottom: "40px",
       }}
     >
       {/* Radial glow blobs */}
@@ -138,104 +138,92 @@ export default function Hero() {
         />
       ))}
 
-      <div className="container-custom relative z-10 w-full pt-32 pb-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left content — 8 cols */}
-          <div className="lg:col-span-8">
-            {/* Sub-label */}
-            <h5
-              style={{
-                color: "#2396fc",
-                fontSize: "14px",
-                fontWeight: 600,
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                marginBottom: "16px",
-                fontFamily: "var(--font-poppins, Poppins, sans-serif)",
-              }}
-            >
-              Hari Sharan Prajapati
-            </h5>
+      {/* Circular backdrop — centered behind the person's upper body */}
+      <div
+        style={{
+          position: "absolute",
+          top: "30%",
+          right: "5%",
+          width: "520px",
+          height: "520px",
+          borderRadius: "50%",
+          background: "rgba(255, 255, 255, 0.18)",
+          border: "none",
+          zIndex: 9,
+        }}
+      />
 
-            {/* Main heading with typed text */}
-            <h2
-              style={{
-                fontFamily: "var(--font-poppins, Poppins, sans-serif)",
-                color: "#ffffff",
-                fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
-                fontWeight: 700,
-                lineHeight: 1.2,
-                marginBottom: "24px",
-              }}
-            >
-              {"I'm a "}
-              <span className="typed-gradient">{typedText}</span>
-              <span className="typed-cursor">|</span>
-            </h2>
+      {/* Hero photo — pinned bottom-right, bleeds to edge */}
+      <img
+        src="/hero-hari.png"
+        alt="Hari Sharan Prajapati"
+        style={{
+          position: "absolute",
+          bottom: 0,
+          right: '5%',
+          zIndex: 10,
+          height: "90%",
+          width: "auto",
+          objectFit: "contain",
+          objectPosition: "bottom right",
+          filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.4))",
+        }}
+      />
 
-            {/* Description */}
-            <p
-              style={{
-                color: "#c5c5d5",
-                fontSize: "16px",
-                lineHeight: "1.8",
-                marginBottom: "36px",
-                maxWidth: "560px",
-              }}
-            >
-              Accomplished Art Director with 13+ years of experience delivering
-              high-impact visual identities, social media campaigns, print
-              publications, and motion graphics. Top Rated Plus on Upwork with
-              113+ completed projects.
-            </p>
+      {/* Left content */}
+      <div className="container-custom relative z-10 w-full pt-12 pb-4">
+        <div style={{ maxWidth: "52%" }}>
+          {/* Sub-label */}
+          <h5
+            style={{
+              color: "#00f3fe",
+              fontSize: "14px",
+              fontWeight: 600,
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              marginBottom: "16px",
+              fontFamily: "var(--font-poppins, Poppins, sans-serif)",
+            }}
+          >
+            Hari Sharan Prajapati
+          </h5>
 
-            {/* CTA */}
-            <a href="#work" className="btn-primary-custom">
-              Go To Portfolio <FaChevronRight size={12} />
-            </a>
-          </div>
+          {/* Main heading with typed text */}
+          <h2
+            style={{
+              fontFamily: "var(--font-poppins, Poppins, sans-serif)",
+              color: "#ffffff",
+              fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
+              fontWeight: 700,
+              lineHeight: 1.2,
+              marginBottom: "24px",
+            }}
+          >
+            {"I'm a "}
+            <span className="typed-gradient" style={{ fontSize: "0.75em" }}>{typedText}</span>
+            <span className="typed-cursor" style={{ fontSize: "0.75em" }}>|</span>
+          </h2>
 
-          {/* Right — hero photo */}
-          <div className="lg:col-span-4 flex justify-center items-end">
-            <div
-              className="float-anim"
-              style={{
-                position: "relative",
-                width: "340px",
-                height: "380px",
-              }}
-            >
-              {/* Circular backdrop glow */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "10%",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: "300px",
-                  height: "300px",
-                  borderRadius: "50%",
-                  background: "rgba(255,255,255,0.08)",
-                  border: "2px solid rgba(255,255,255,0.15)",
-                }}
-              />
-              {/* Photo */}
-              <img
-                src="/hero-hari.png"
-                alt="Hari Sharan Prajapati"
-                style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  height: "100%",
-                  objectFit: "contain",
-                  objectPosition: "bottom",
-                  filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.4))",
-                }}
-              />
-            </div>
-          </div>
+          {/* Description */}
+          <p
+            style={{
+              color: "#c5c5d5",
+              fontSize: "16px",
+              lineHeight: "1.8",
+              marginBottom: "36px",
+              maxWidth: "540px",
+            }}
+          >
+            Accomplished Art Director with 13+ years of experience delivering
+            high-impact visual identities, social media campaigns, print
+            publications, and motion graphics. Top Rated Plus on Upwork with
+            113+ completed projects.
+          </p>
+
+          {/* CTA */}
+          <a href="#work" className="btn-primary-custom" style={{ background: "#00f3fe", color: "#000" }}>
+            Go To Portfolio <FaChevronRight size={12} />
+          </a>
         </div>
       </div>
     </section>

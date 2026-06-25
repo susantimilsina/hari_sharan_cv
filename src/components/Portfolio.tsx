@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 type Category = "all" | "logo" | "motion" | "print" | "reels" | "social";
 
@@ -15,11 +15,11 @@ const filters: { label: string; value: Category }[] = [
 
 // Category thumbnail cards shown on "All" tab
 const categoryCards: { cat: Category; label: string; image: string }[] = [
-  { cat: "logo",   label: "Logo",            image: "/portfolio/logo-thumbnail.png" },
-  { cat: "motion", label: "Motion & Video",  image: "/portfolio/motion-thumbnail.png" },
-  { cat: "print",  label: "Print",           image: "/portfolio/print-thumbnail.png" },
-  { cat: "reels",  label: "Reels & Shorts",  image: "/portfolio/reels-thumbnail.png" },
-  { cat: "social", label: "Social Media",    image: "/portfolio/social-thumbnail.png" },
+  { cat: "logo",   label: "Logo",            image: "/portfolio/logo-thumbnail.jpg" },
+  { cat: "motion", label: "Motion & Video",  image: "/portfolio/motion-thumbnail.jpg" },
+  { cat: "print",  label: "Print",           image: "/portfolio/print-thumbnail.jpg" },
+  { cat: "reels",  label: "Reels & Shorts",  image: "/portfolio/reels-thumbnail.jpg" },
+  { cat: "social", label: "Social Media",    image: "/portfolio/social-thumbnail.jpg" },
 ];
 
 // Individual posts per category
@@ -43,22 +43,29 @@ const posts: Record<Category, { id: number; image: string; title: string }[]> = 
 
 export default function Portfolio() {
   const [active, setActive] = useState<Category>("all");
-  const [lightbox, setLightbox] = useState<{ images: { image: string; title: string }[]; index: number } | null>(null);
+  const [lightbox, setLightbox] = useState<{ images: { image: string; title: string }[]; startIndex: number } | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const activePosts = posts[active];
   const showCategoryGrid = active === "all" || activePosts.length === 0;
 
   const openLightbox = (images: { image: string; title: string }[], index: number) => {
-    setLightbox({ images, index });
+    itemRefs.current = [];
+    setLightbox({ images, startIndex: index });
   };
 
   const closeLightbox = () => setLightbox(null);
 
-  const prev = () =>
-    setLightbox((lb) => lb && { ...lb, index: (lb.index - 1 + lb.images.length) % lb.images.length });
-
-  const next = () =>
-    setLightbox((lb) => lb && { ...lb, index: (lb.index + 1) % lb.images.length });
+  // Scroll to the clicked image once the overlay mounts
+  useEffect(() => {
+    if (lightbox && scrollRef.current) {
+      const target = itemRefs.current[lightbox.startIndex];
+      if (target) {
+        target.scrollIntoView({ block: "start" });
+      }
+    }
+  }, [lightbox]);
 
   return (
     <section id="work" className="section-pad" style={{ background: "#ffffff" }}>
@@ -213,68 +220,53 @@ export default function Portfolio() {
         )}
       </div>
 
-      {/* Lightbox */}
+      {/* Lightbox — vertical scroll */}
       {lightbox && (
         <div
-          onClick={closeLightbox}
           style={{
             position: "fixed", inset: 0, zIndex: 1000,
             background: "rgba(0,0,0,0.92)",
-            display: "flex", alignItems: "center", justifyContent: "center",
+            overflowY: "auto",
           }}
+          ref={scrollRef}
         >
-          {/* Prev */}
-          <button
-            onClick={(e) => { e.stopPropagation(); prev(); }}
-            style={{
-              position: "absolute", left: "20px",
-              background: "rgba(255,255,255,0.1)", border: "none",
-              color: "#fff", fontSize: "28px", width: "48px", height: "48px",
-              borderRadius: "50%", cursor: "pointer", display: "flex",
-              alignItems: "center", justifyContent: "center",
-            }}
-          >
-            ‹
-          </button>
-
-          {/* Image */}
-          <img
-            src={lightbox.images[lightbox.index].image}
-            alt={lightbox.images[lightbox.index].title}
-            onClick={(e) => e.stopPropagation()}
-            style={{ maxHeight: "88vh", maxWidth: "88vw", borderRadius: "8px", objectFit: "contain" }}
-          />
-
-          {/* Next */}
-          <button
-            onClick={(e) => { e.stopPropagation(); next(); }}
-            style={{
-              position: "absolute", right: "20px",
-              background: "rgba(255,255,255,0.1)", border: "none",
-              color: "#fff", fontSize: "28px", width: "48px", height: "48px",
-              borderRadius: "50%", cursor: "pointer", display: "flex",
-              alignItems: "center", justifyContent: "center",
-            }}
-          >
-            ›
-          </button>
-
           {/* Close */}
           <button
             onClick={closeLightbox}
             style={{
-              position: "absolute", top: "20px", right: "20px",
-              background: "rgba(255,255,255,0.1)", border: "none",
-              color: "#fff", fontSize: "20px", width: "40px", height: "40px",
-              borderRadius: "50%", cursor: "pointer",
+              position: "fixed", top: "20px", right: "20px", zIndex: 1001,
+              background: "rgba(255,255,255,0.15)", border: "none",
+              color: "#fff", fontSize: "20px", width: "44px", height: "44px",
+              borderRadius: "50%", cursor: "pointer", backdropFilter: "blur(4px)",
             }}
           >
             ✕
           </button>
 
-          {/* Counter */}
-          <div style={{ position: "absolute", bottom: "24px", color: "rgba(255,255,255,0.6)", fontSize: "13px" }}>
-            {lightbox.index + 1} / {lightbox.images.length}
+          {/* All images stacked vertically */}
+          <div
+            style={{
+              display: "flex", flexDirection: "column",
+              alignItems: "center", gap: "32px",
+              padding: "80px 24px 80px",
+            }}
+          >
+            {lightbox.images.map((img, i) => (
+              <div
+                key={i}
+                ref={(el) => { itemRefs.current[i] = el; }}
+                style={{ width: "100%", maxWidth: "900px" }}
+              >
+                <img
+                  src={img.image}
+                  alt={img.title}
+                  style={{ width: "100%", borderRadius: "10px", display: "block", boxShadow: "0 8px 40px rgba(0,0,0,0.5)" }}
+                />
+                <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "13px", textAlign: "center", marginTop: "10px" }}>
+                  {i + 1} / {lightbox.images.length} — {img.title}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       )}

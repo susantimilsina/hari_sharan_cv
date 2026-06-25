@@ -17,7 +17,6 @@ export default function About() {
                 overflow: "hidden",
                 width: "100%",
                 maxWidth: "400px",
-                height: "460px",
                 boxShadow: "0 20px 60px rgba(0,0,0,0.12)",
               }}
             >
@@ -25,12 +24,8 @@ export default function About() {
                 src="/hero-photo.png"
                 alt="Hari Sharan Prajapati"
                 style={{
-                  width: "111%",
-                  height: "111%",
-                  marginLeft: "-5.5%",
-                  marginTop: "-5.5%",
-                  objectFit: "cover",
-                  objectPosition: "top center",
+                  width: "100%",
+                  height: "auto",
                   display: "block",
                 }}
               />
@@ -43,7 +38,7 @@ export default function About() {
             <h2
               style={{
                 fontFamily: "var(--font-poppins, Poppins, sans-serif)",
-                color: "#111135",
+                color: "#2396fc",
                 fontSize: "32px",
                 fontWeight: 700,
                 marginBottom: "10px",
@@ -53,14 +48,16 @@ export default function About() {
             </h2>
             <h5
               style={{
-                color: "#2396fc",
-                fontSize: "16px",
+                color: "#50506a",
+                fontSize: "13px",
                 fontWeight: 600,
+                letterSpacing: "1.5px",
+                textTransform: "uppercase",
                 marginBottom: "24px",
                 fontFamily: "var(--font-1, Poppins, sans-serif)",
               }}
             >
-              Art Director based in Bhaktapur, Nepal
+              Art Director/Video Editor based in Bhaktapur, Nepal
             </h5>
 
             <p

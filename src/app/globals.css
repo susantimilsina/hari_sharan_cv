@@ -70,7 +70,7 @@ h6 {
 /* Typed animation gradient text */
 .typed-gradient {
   display: inline-block;
-  background: linear-gradient(to right, #2396fc, #d580ff);
+  background: linear-gradient(to right, #00f3fe, #2396fc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
