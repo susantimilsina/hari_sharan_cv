@@ -6,6 +6,27 @@ import { FaQuoteLeft } from "react-icons/fa";
 const testimonials = [
   {
     quote:
+      "I have hired Hari for several design tasks that has mainly related to company presentations of various types. Hari is easy to work with, reliable and quality of he´s work meets all the highest of standards.",
+    name: "Henry J.",
+    role: "Client",
+    photo: "/testimonials/henry.jpg",
+  },
+  {
+    quote:
+      "Absolute gem. Hari has always been fantastic and does careful work, always ensuring he understands my needs. Worked for me on dozens of projects, and it is always great. Over the years he has gotten better and better. Will hire again when the need comes up.",
+    name: "Rebecca Rachmany",
+    role: "Client",
+    photo: "/testimonials/rebecca.webp",
+  },
+  {
+    quote:
+      "Hari was able to jump on my project quickly and even provide some real time communication despite being the opposite time zone. He's proficient with Illustrator, and understands the nuances needed for my project. Looking forward to a continuing working relationship.",
+    name: "Justin Flores",
+    role: "Client",
+    photo: "/testimonials/justin.jpg",
+  },
+  {
+    quote:
       "Hari delivered exceptional branding work for our startup. His attention to detail and creativity exceeded all our expectations. The brand identity he created has become central to our marketing success.",
     name: "Michael Daniel",
     role: "CEO, ManySoft Agency",
@@ -89,24 +110,38 @@ export default function Testimonials() {
                 gap: "16px",
               }}
             >
-              <div
-                style={{
-                  width: "52px",
-                  height: "52px",
-                  borderRadius: "50%",
-                  background: "linear-gradient(135deg, #2396fc, #2396fc)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontFamily: "var(--font-poppins, Poppins, sans-serif)",
-                  fontWeight: 700,
-                  color: "#fff",
-                  fontSize: "14px",
-                  flexShrink: 0,
-                }}
-              >
-                {t.initials}
-              </div>
+              {"photo" in t && t.photo ? (
+                <img
+                  src={t.photo}
+                  alt={t.name}
+                  style={{
+                    width: "52px",
+                    height: "52px",
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    flexShrink: 0,
+                  }}
+                />
+              ) : (
+                <div
+                  style={{
+                    width: "52px",
+                    height: "52px",
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, #2396fc, #2396fc)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontFamily: "var(--font-poppins, Poppins, sans-serif)",
+                    fontWeight: 700,
+                    color: "#fff",
+                    fontSize: "14px",
+                    flexShrink: 0,
+                  }}
+                >
+                  {"initials" in t ? t.initials : ""}
+                </div>
+              )}
               <div>
                 <p
                   style={{

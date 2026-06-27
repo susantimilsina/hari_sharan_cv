@@ -66,9 +66,8 @@ export default function Services() {
               color: "#2396fc",
               fontSize: "14px",
               fontWeight: 600,
-              letterSpacing: "1px",
-              paddingBottom: "6px",
-              borderBottom: "2px solid #2396fc",
+              letterSpacing: "2px",
+              textTransform: "uppercase",
               marginBottom: "20px",
             }}
           >

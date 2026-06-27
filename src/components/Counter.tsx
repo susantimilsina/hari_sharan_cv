@@ -22,7 +22,7 @@ const stats = [
   },
   {
     icon: <FaTrophy size={22} />,
-    countTo: 6,
+    countTo: 15,
     suffix: "",
     label1: "Companies",
     label2: "Worked At",
@@ -160,6 +160,7 @@ export default function Counter() {
           {stats.map((s, i) => (
             <div
               key={s.label1}
+              className={i < stats.length - 1 ? "counter-item-border" : ""}
               style={{
                 borderRight:
                   i < stats.length - 1

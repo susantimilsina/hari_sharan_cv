@@ -78,7 +78,7 @@ export default function Hero() {
       className="relative flex items-center overflow-hidden"
       style={{
         minHeight: "85vh",
-        backgroundImage: "url('/Background-banner.jpg')",
+        backgroundImage: "url('/Background-banner.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -139,40 +139,18 @@ export default function Hero() {
       ))}
 
       {/* Circular backdrop — centered behind the person's upper body */}
-      <div
-        style={{
-          position: "absolute",
-          top: "30%",
-          right: "5%",
-          width: "520px",
-          height: "520px",
-          borderRadius: "50%",
-          background: "rgba(255, 255, 255, 0.18)",
-          border: "none",
-          zIndex: 9,
-        }}
-      />
+      <div className="hero-backdrop" />
 
       {/* Hero photo — pinned bottom-right, bleeds to edge */}
       <img
-        src="/hero-hari.png"
+        src="/hero-hari.webp"
         alt="Hari Sharan Prajapati"
-        style={{
-          position: "absolute",
-          bottom: 0,
-          right: '5%',
-          zIndex: 10,
-          height: "90%",
-          width: "auto",
-          objectFit: "contain",
-          objectPosition: "bottom right",
-          filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.4))",
-        }}
+        className="hero-photo"
       />
 
       {/* Left content */}
       <div className="container-custom relative z-10 w-full pt-12 pb-4">
-        <div style={{ maxWidth: "52%" }}>
+        <div className="hero-text-col">
           {/* Sub-label */}
           <h5
             style={{
@@ -193,15 +171,15 @@ export default function Hero() {
             style={{
               fontFamily: "var(--font-poppins, Poppins, sans-serif)",
               color: "#ffffff",
-              fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
+              fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
               fontWeight: 700,
               lineHeight: 1.2,
               marginBottom: "24px",
             }}
           >
             {"I'm a "}
-            <span className="typed-gradient" style={{ fontSize: "0.75em" }}>{typedText}</span>
-            <span className="typed-cursor" style={{ fontSize: "0.75em" }}>|</span>
+            <span className="typed-gradient">{typedText}</span>
+            <span className="typed-cursor">|</span>
           </h2>
 
           {/* Description */}

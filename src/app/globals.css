@@ -200,3 +200,65 @@ h6 {
   background: #2396fc;
   border-radius: 4px;
 }
+
+/* ── Hero responsive ── */
+.hero-text-col {
+  max-width: 52%;
+}
+
+.hero-photo {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  z-index: 10;
+  height: 90%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom right;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+}
+
+.hero-backdrop {
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  z-index: 9;
+}
+
+/* ── Responsive breakpoints ── */
+@media (max-width: 1024px) {
+  .hero-text-col {
+    max-width: 100%;
+  }
+
+  .hero-photo {
+    display: none;
+  }
+
+  .hero-backdrop {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding: 60px 0;
+  }
+
+  .contact-form-inner {
+    padding: 28px 20px !important;
+  }
+
+  .counter-item-border {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .counter-item-border:last-child {
+    border-bottom: none;
+  }
+}
