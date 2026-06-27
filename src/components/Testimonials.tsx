@@ -25,27 +25,6 @@ const testimonials = [
     role: "Client",
     photo: "/testimonials/justin.jpg",
   },
-  {
-    quote:
-      "Hari delivered exceptional branding work for our startup. His attention to detail and creativity exceeded all our expectations. The brand identity he created has become central to our marketing success.",
-    name: "Michael Daniel",
-    role: "CEO, ManySoft Agency",
-    initials: "MD",
-  },
-  {
-    quote:
-      "Working with Hari on our social media campaigns was a game-changer. His designs drove a 40% increase in engagement. A true professional who understands both aesthetics and business objectives.",
-    name: "Sarah Johnson",
-    role: "Marketing Director, TechCorp",
-    initials: "SJ",
-  },
-  {
-    quote:
-      "Hari's art direction for our advertising campaigns was outstanding. He leads creative teams seamlessly and delivers high-impact visuals that connect with audiences. Highly recommended.",
-    name: "David Williams",
-    role: "Founder, CreativeLab",
-    initials: "DW",
-  },
 ];
 
 export default function Testimonials() {
@@ -110,8 +89,7 @@ export default function Testimonials() {
                 gap: "16px",
               }}
             >
-              {"photo" in t && t.photo ? (
-                <img
+              <img
                   src={t.photo}
                   alt={t.name}
                   style={{
@@ -122,26 +100,6 @@ export default function Testimonials() {
                     flexShrink: 0,
                   }}
                 />
-              ) : (
-                <div
-                  style={{
-                    width: "52px",
-                    height: "52px",
-                    borderRadius: "50%",
-                    background: "linear-gradient(135deg, #2396fc, #2396fc)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontFamily: "var(--font-poppins, Poppins, sans-serif)",
-                    fontWeight: 700,
-                    color: "#fff",
-                    fontSize: "14px",
-                    flexShrink: 0,
-                  }}
-                >
-                  {"initials" in t ? t.initials : ""}
-                </div>
-              )}
               <div>
                 <p
                   style={{
